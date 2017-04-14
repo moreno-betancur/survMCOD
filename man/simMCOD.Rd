@@ -49,7 +49,7 @@ of Moreno-Betancur et al. (2017). See that reference for details.
 }
 \examples{
 
-  datEx<-simMCOD(n=400,xi=-1,rho=-2,phi=0,
+  datEx<-simMCOD(n=1000,xi=-1,rho=-2,phi=0,
           pgen=c(1,0,0.75,0.25,0.125,0.083),
           lambda=0.001,v=2,pUC=c(1,0.75))
 

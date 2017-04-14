@@ -15,26 +15,26 @@ Produce plots to check convergence of multiple-cause model
 \details{
 The plots produced show Iter+2 estimates of each parameter, where Iter is the number of iterations specified by the user in the call
 to \code{survMCOD}. The first two estimates correspond to a starting value and an improved starting value
-(see Moreno-Betancur et al. 2017 for details). Health convergence is seen by curves showing variation in estimates across the first
+(see Moreno-Betancur et al. 2017 for details). Healthy convergence is seen by curves showing variation in estimates across the first
 three points, followed by a stabilisation of the curve around the final estimate.
 }
 \examples{
 
-  ## Example ##
+  ## Example ## uncomment to run
 
   # First we simulate data using the simMCOD function:
-  datEx<-simMCOD(n=400,xi=-1,rho=-2,phi=0,
-         pgen=c(1,0,0.75,0.25,0.125,0.083),
-         lambda=0.001,v=2,pUC=c(1,0.75))
+  # datEx<-simMCOD(n=1000,xi=-1,rho=-2,phi=0,
+  #       pgen=c(1,0,0.75,0.25,0.125,0.083),
+  #      lambda=0.001,v=2,pUC=c(1,0.75))
 
   # Run analysis
 
-  fitMCOD<-survMCOD(SurvM(time=TimeEntry,time2=TimeExit,status=Status,
-                          weight=Pi)~X1,
-                   formOther=~Z1,data=datEx,UC_indicator="UC")
+  # fitMCOD<-survMCOD(SurvM(time=TimeEntry,time2=TimeExit,status=Status,
+  #                       weight=Pi)~X1,
+  #                  formOther=~Z1,data=datEx,UC_indicator="UC")
 
   # Check convergence of multiple-cause analysis
-  check.survMCOD(fitMCOD)
+  # check.survMCOD(fitMCOD)
 
 }
 \references{

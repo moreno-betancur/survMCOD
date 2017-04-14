@@ -34,7 +34,7 @@ for descriptions and discussions of various weight-attribution strategies to det
 }
 \examples{
 
-  datEx<-simMCOD(n=400,xi=-1,rho=-2,phi=0,pgen=c(1,0,0.75,0.25,0.125,0.083),
+  datEx<-simMCOD(n=1000,xi=-1,rho=-2,phi=0,pgen=c(1,0,0.75,0.25,0.125,0.083),
           lambda=0.001,v=2,pUC=c(1,0.75))
 
   SurvM(time=datEx$TimeEntry, time2=datEx$TimeExit, status=datEx$Status,

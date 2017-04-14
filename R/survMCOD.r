@@ -57,14 +57,14 @@
 #' Convergence of the multiple-cause model fitting procedure should be checked
 #' using \code{check.survMCOD}.
 #'
-#'@return This development version returns a list with three components. First, a list with the results of the multiple-cause analysis
-#'(regression coefficient estimates for disease of interest and other diseases, and estimates of the piecewise constant
-#'log ratio of the baseline pure hazards). Second, a list has the results of the single-cause analysis (regression coefficient
-#'estimates for disease of interest and other diseases). All estimates are accompanied with standard errors, 95\%  confidence intervals
-#'and p-values. This will change in future versions when a proper class of objects and summary and other such methods are developed.
-#'Third, a data.frame with Iter+2 estimates of each parameter, the first two corresponding to a starting value and an improved starting value
-#'(see Moreno-Betancur et al. 2017 for details). This data.frame is used by function \code{check.survMCOD}, which enables
-#'the user to check convergence (type ?check.survMCOD for details).
+#'@return This development version returns a list with three components. First, a list with the results of the multiple-cause analysis.
+#'These are estimates of log hazard ratios for the models for the disease of interest and other diseases, and
+#'estimates of the piecewise constant log ratio of the baseline pure hazards. Second, a list with the single-cause analysis
+#'log hazard ratio estimates for the disease of interest and other diseases. All estimates are accompanied with their corresponding
+#'standard errors, 95\%  confidence intervals and p-values. This will change in future versions when a proper class of objects and
+#'summary and other such methods are developed. Third, a data.frame with Iter+2 estimates of each parameter, the first two corresponding
+#'to a starting value and an improved starting value (see Moreno-Betancur et al. 2017 for details). This data.frame is used by function
+#'\code{check.survMCOD}, which enables the user to check convergence (type ?check.survMCOD for details).
 #'
 #'@references
 #'
@@ -82,7 +82,7 @@
 #'   ## Example ##
 #'
 #'   # First we simulate data using the simMCOD function:
-#'   datEx<-simMCOD(n=400,xi=-1,rho=-2,phi=0,
+#'   datEx<-simMCOD(n=1000,xi=-1,rho=-2,phi=0,
 #'          pgen=c(1,0,0.75,0.25,0.125,0.083),
 #'          lambda=0.001,v=2,pUC=c(1,0.75))
 #'
