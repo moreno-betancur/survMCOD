@@ -13,3 +13,5 @@ LazyData: TRUE
 RoxygenNote: 6.0.1
 Author: Margarita Moreno-Betancur [cre, aut]
 Maintainer: Margarita Moreno-Betancur <margarita.moreno@mcri.edu.au>
+URL: https://github.com/moreno-betancur/survMCOD
+BugReports: https://github.com/moreno-betancur/survMCOD/issues
