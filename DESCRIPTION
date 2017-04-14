@@ -1,0 +1,15 @@
+Package: survMCOD
+Version: 0.1.0
+Title: Survival analysis with multiple causes of death
+Authors@R: c(person("Margarita", "Moreno-Betancur", email = "margarita.moreno@mcri.edu.au", role = c("cre","aut")))
+Depends: R (>= 3.1.0), survival
+Imports: Matrix
+Description:  Fits Cox regression models for the hazard of death due to a disease of interest based on multiple
+              cause-of-death data, thus acknowledging that death may be caused by several disease processes acting 
+              concurrently. This is based on the model for multiple-cause mortality proposed by Moreno-Betancur et al. 
+              (2017) which extends the single-cause competing risks model to that setting.
+License: GPL (>= 3)
+LazyData: TRUE
+RoxygenNote: 6.0.1
+Author: Margarita Moreno-Betancur [cre, aut]
+Maintainer: Margarita Moreno-Betancur <margarita.moreno@mcri.edu.au>
