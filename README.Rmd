@@ -62,6 +62,7 @@ datEx<-simMCOD(n=4000,xi=-1,rho=-2,phi=0,
 ```
 
 The dataset is of the format required by `survMCOD`. It contains one row per invididual, and the variables consist of: 
+
 * The covariates to include as regressors in the models (X1 and Z1).
 * A time of entry and a time of exit corresponding to the set-up of a time-to-event outcome with delayed entry and right censoring (TimeEntry and TimeExit). N.B. The package also handles the simple right-censoring case. 
 * The vital status of the indvidual at TimeExit (Status), coded 1=died and 0=alive.

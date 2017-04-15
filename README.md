@@ -48,7 +48,13 @@ datEx <- simMCOD(n = 4000, xi = -1, rho = -2, phi = 0, pgen = c(1, 0, 0.75,
     0.25, 0.125, 0.083), lambda = 0.001, v = 2, pUC = c(1, 0.75))
 ```
 
-The dataset is of the format required by `survMCOD`. It contains one row per invididual, and the variables consist of: \* The covariates to include as regressors in the models (X1 and Z1). \* A time of entry and a time of exit corresponding to the set-up of a time-to-event outcome with delayed entry and right censoring (TimeEntry and TimeExit). N.B. The package also handles the simple right-censoring case. \* The vital status of the indvidual at TimeExit (Status), coded 1=died and 0=alive. \* A weight indicating the proportion of the death attributed to the disease of interest (Pi) which is a number between 0 and 1 if Status=1 and missing (NA) if Status=0. \* The underlying cause indicator (UC) which is 1 if the disease of interest was selected as underlying cause using WHO rules and 0 otherwise.
+The dataset is of the format required by `survMCOD`. It contains one row per invididual, and the variables consist of:
+
+-   The covariates to include as regressors in the models (X1 and Z1).
+-   A time of entry and a time of exit corresponding to the set-up of a time-to-event outcome with delayed entry and right censoring (TimeEntry and TimeExit). N.B. The package also handles the simple right-censoring case.
+-   The vital status of the indvidual at TimeExit (Status), coded 1=died and 0=alive.
+-   A weight indicating the proportion of the death attributed to the disease of interest (Pi) which is a number between 0 and 1 if Status=1 and missing (NA) if Status=0.
+-   The underlying cause indicator (UC) which is 1 if the disease of interest was selected as underlying cause using WHO rules and 0 otherwise.
 
 When analysing your own survival data with multiple causes of death, a key preliminary step to fitting models with `survMCOD` will be to assign a weight to each death that represents the proportion of the death attributed to the disease of interest. The user is referred to [Moreno-Betancur et al. (2017)](http://journals.lww.com/epidem/Abstract/2017/01000/Survival_Analysis_with_Multiple_Causes_of_Death_.3.aspx), [Piffaretti et al. (2016)](http://cdrwww.who.int/bulletin/volumes/94/12/16-172189.pdf) and [Rey et al. (2017)](http://invs.santepubliquefrance.fr/beh/2017/1/pdf/2017_1_2.pdf) for descriptions and discussions of various weight-attribution strategies.
 
