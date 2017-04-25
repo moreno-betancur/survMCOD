@@ -35,6 +35,10 @@ library(devtools)
 install_github("moreno-betancur/survMCOD")
 ```
 
+### Reference manual
+
+The full reference manual of the package can be dowloaded [here](https://rawgit.com/moreno-betancur/Reference_manuals/master/survMCOD.pdf).
+
 Example
 -------
 
@@ -44,8 +48,19 @@ To illustrate the use of the package, we use data simulated using the package's 
 library(survMCOD)
 #> Loading required package: survival
 
+set.seed(234)  #we set a seed to ensure we get the same simulated dataset everytime
+
 datEx <- simMCOD(n = 4000, xi = -1, rho = -2, phi = 0, pgen = c(1, 0, 0.75, 
     0.25, 0.125, 0.083), lambda = 0.001, v = 2, pUC = c(1, 0.75))
+
+head(datEx)
+#>      X1 Z1 TimeEntry   TimeExit Status    Pi UC
+#> 3111  1  1         0 0.04893038      1 0.125  0
+#> 3582  1  1         0 0.09594153      1 0.000  0
+#> 1228  0  0         0 0.22914495      1 0.750  1
+#> 1088  1  1         0 0.30536047      1 0.000  0
+#> 1196  1  1         0 0.31116056      1 0.000  0
+#> 531   0  0         0 0.34095113      1 0.083  0
 ```
 
 The dataset is of the format required by `survMCOD`. It contains one row per invididual, and the variables consist of:
@@ -108,7 +123,7 @@ The convergence of the multiple-cause analysis should be checked using (use `?ch
 check.survMCOD(fitMCOD)
 ```
 
-![](README-unnamed-chunk-7-1.png)
+![](README-unnamed-chunk-6-1.png)
 
 Healthy convergence is seen by curves showing variation in estimates across the first three points, followed by a stabilisation of the curve around the final estimate.
 

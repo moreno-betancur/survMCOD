@@ -46,6 +46,10 @@ library(devtools)
 install_github("moreno-betancur/survMCOD")
 ```
 
+### Reference manual
+
+The full reference manual of the package can be dowloaded [here](https://rawgit.com/moreno-betancur/Reference_manuals/master/survMCOD.pdf).
+
 ## Example
 
 To illustrate the use of the package, we use data simulated using the package's `simMCOD` function  (use `?simMCOD` for more details):
