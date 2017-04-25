@@ -49,16 +49,17 @@ install_github("moreno-betancur/survMCOD")
 ## Example
 
 To illustrate the use of the package, we use data simulated using the package's `simMCOD` function  (use `?simMCOD` for more details):
-```{r echo=FALSE} 
-set.seed(234)
-```
 
 ```{r tidy=T}
 library(survMCOD)
 
+set.seed(234)  #we set a seed to ensure we get the same simulated dataset everytime
+
 datEx<-simMCOD(n=4000,xi=-1,rho=-2,phi=0,
           pgen=c(1,0,0.75,0.25,0.125,0.083),
           lambda=0.001,v=2,pUC=c(1,0.75))
+
+head(datEx)
 ```
 
 The dataset is of the format required by `survMCOD`. It contains one row per invididual, and the variables consist of: 

@@ -1,0 +1,21 @@
+citHeader("To cite mice in publications use:")
+
+citEntry(entry = "Article",
+  title        = "Survival analysis with multiple causes of death: Extending the competing risks model",
+  author       = personList(person("Margarita", "Moreno-Betancur"),
+                   as.person("Hamza Sadaoui"),
+                   as.person("Clara Piffaretti"),
+                   as.person("Gregoire Rey")),
+  journal      = "Epidemiology",
+  year         = "2017",
+  volume       = "28",
+  number       = "1",
+  pages        = "12--19",
+  url          = "http://journals.lww.com/epidem/Abstract/2017/01000/Survival_Analysis_with_Multiple_Causes_of_Death_.3.aspx",
+
+  textVersion  =
+  paste("Moreno-Betancur M, Sadaoui H, Piffaretti C, Rey G. (2017).",
+        "Survival analysis with multiple causes of death: Extending the competing risks model",
+        "Epidemiology 2017, 28(1), 12-19.",
+        "URL http://journals.lww.com/epidem/Abstract/2017/01000/Survival_Analysis_with_Multiple_Causes_of_Death_.3.aspx"))
+
