@@ -174,6 +174,7 @@ survMCOD<-function(formula, formOther=formula[-2], data,
   dat2$status<-apply(cbind(1:nrow(dat2),dat2$pi),1,function(x)return(ifelse(is.na(x[2]),0,which(round(psetTT,10)==round(x[2],10)))))
   pset<-psetTT
   statuses<-1:length(psetTT)
+  dat2<-cbind(matZ,matX,dat2)
   dat<-dat2[,c(paste("Z",1:nZ,sep=""),paste("X",1:nX,sep=""),"AgeEntry","AgeExit","status")]
   dat<-dat[order(dat$AgeExit),]
   datamat<-as.matrix(dat)
