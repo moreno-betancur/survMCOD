@@ -251,19 +251,18 @@ survMCOD<-function(formula, formOther=formula[-2], data,
 
   tabres<-data.frame(Coef=opt[(Iter+2),],SE=SE,CIlow=opt[(Iter+2),]-1.96*SE,
                       CIupp=opt[(Iter+2),]+1.96*SE, "pvalue"=2*(1-pnorm(q=abs(opt[(Iter+2),]/SE))),
-                      row.names=
-                        c(namXi,namX,namZ))
+                      row.names=NULL)
 
   RESMCOD<-list()
-  RESMCOD[["Disease of interest"]]<-  tabres[(nxi+1):(nxi+nX),]
-  RESMCOD[["Other diseases"]]<-  tabres[(nxi+nX+1):(nxi+nX+nZ),]
-  RESMCOD[["Piecewise constant log ratio of the baseline pure hazards"]]<-  tabres[1:nxi,]
+  RESMCOD[["Disease of interest"]]<-  data.frame(tabres[(nxi+1):(nxi+nX),],row.names=namX)
+  RESMCOD[["Other diseases"]]<-   data.frame(tabres[(nxi+nX+1):(nxi+nX+nZ),],row.names=namZ)
+  RESMCOD[["Piecewise constant log ratio of the baseline pure hazards"]]<-
+    data.frame( tabres[1:nxi,],row.names=namXi)
 
-  row.names(resSCOD)<-c(namX,namZ)
   resSCOD<-data.frame(resSCOD)
   RESSCOD<-list()
-  RESSCOD[["Disease of interest"]]<-resSCOD[1:nX,]
-  RESSCOD[["Other diseases"]]<-resSCOD[(nX+1):(nX+nZ),]
+  RESSCOD[["Disease of interest"]]<- data.frame(resSCOD[1:nX,],row.names=namX)
+  RESSCOD[["Other diseases"]]<-data.frame(resSCOD[(nX+1):(nX+nZ),],row.names=namZ)
 
   RES<-list()
   RES[["Multiple-cause"]]<-RESMCOD
