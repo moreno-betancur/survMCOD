@@ -181,7 +181,10 @@ survMCOD<-function(formula, formOther=formula[-2], data,
 
   #### Determine age-groups with at least one "pure" event for piecewise constant estimation of baseline hazard
   #### This leads to txi and nxi to feed to functions.
-  txi<-c(0,round(quantile(dat$AgeExit[dat$status==1])[2:4],2))
+
+  if(sum(dat$status==1)>=4)
+  txi<-c(0,round(quantile(dat$AgeExit[dat$status==1])[2:4],2))else
+      txi<-c(0,round(quantile(dat$AgeExit[dat$status==1])[3],2))
   nxi<-length(txi)
   namXi<-paste("xi.",txi,sep="")
 
